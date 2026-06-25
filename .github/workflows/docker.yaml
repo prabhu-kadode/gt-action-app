@@ -1,4 +1,4 @@
-name: Docker Image Build
+name : Docker Image Build
 
 on:
   pull_request:
@@ -19,13 +19,13 @@ jobs:
                   node-version: 22
                   cache: npm
             - name: NPM Install
-              user: npm install
+              uses: npm install
             
             - name: RUN LINT
-              users: npm run lint
+              uses: npm run lint
             
             - name: Run Unit Test
-              name: npm test
+              uses: npm test
             
             - name: Build Docker Image
               uses: docker build -t cicd-app .
