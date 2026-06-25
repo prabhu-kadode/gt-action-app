@@ -19,13 +19,13 @@ jobs:
                   node-version: 22
                   cache: npm
             - name: NPM Install
-              uses: npm install
+              run: npm install
             
             - name: RUN LINT
-              uses: npm run lint
+              run: npm run lint
             
             - name: Run Unit Test
-              uses: npm test
+              run: npm test
             
             - name: Build Docker Image
-              uses: docker build -t cicd-app .
+              run: docker build -t cicd-app .
