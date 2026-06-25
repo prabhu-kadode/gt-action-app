@@ -1,4 +1,4 @@
-const {add,sub} = require('./index')
+const {add,sub} = require('./util')
 
 test("add 1+2",()=>{
     expect(add(1,2)).toBe(3)
