@@ -1,0 +1,30 @@
+name: Docker Image Build
+
+on:
+  pull_request:
+          branches: 
+                  - main
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+                  cache: npm
+            - name: NPM Install
+              user: npm install
+            
+            - name: RUN LINT
+              users: npm run lint
+            
+            - name: Run Unit Test
+              name: npm test
+            
+            - name: Build Docker Image
+              uses: docker build -t cicd-app .

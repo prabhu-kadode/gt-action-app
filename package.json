@@ -7,6 +7,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "start":"node index",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint": "eslint ."

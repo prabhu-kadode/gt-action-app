@@ -1,17 +1,15 @@
-console.log("hi.")
-function add(a,b) {
-    return a+b
-}
+const express = require("express")
 
-function sub(a,b) {
-    return a-b
-}
+const app = express()
 
-function div(a,b) {
-    return a/b
-}
-console.log(div(10,20))
+app.get("/health",(req,res)=>{
+    res.status(200).send({
+        success:true,
+        status:'ok',
+        statusCode:200
+    })
+})
+app.listen(8000,()=>{
+    console.log("server running at 8000")
+})
 
-module.exports =  {
-    add,sub
-}
