@@ -10,6 +10,7 @@ function sub(a,b) {
 function div(a,b) {
     return a/b
 }
+console.log(div(10,20))
 
 module.exports =  {
     add,sub
